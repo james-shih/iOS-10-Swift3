@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CameraVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQY-9J-e83" customClass="AAPLPreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-1L-Tmq">
+                                <rect key="frame" x="236" y="28" width="60" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="OkF-Z8-3iF"/>
+                                    <constraint firstAttribute="height" constant="50" id="tY5-A3-6gE"/>
+                                </constraints>
+                                <state key="normal" image="camera_icon_snap"/>
+                                <connections>
+                                    <action selector="changeCameraBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="54W-bS-0zg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYa-e4-Ku6">
+                                <rect key="frame" x="130" y="500" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4bG-xm-fAB"/>
+                                    <constraint firstAttribute="height" constant="60" id="JOS-px-NXm"/>
+                                </constraints>
+                                <state key="normal" image="createsnap_btn"/>
+                                <connections>
+                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcS-Of-eVW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sQY-9J-e83" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="20N-la-h67"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sQY-9J-e83" secondAttribute="bottom" id="4wO-6m-SpJ"/>
+                            <constraint firstItem="sQY-9J-e83" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8QZ-qZ-R4F"/>
+                            <constraint firstItem="YYa-e4-Ku6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOD-Vw-DlX"/>
+                            <constraint firstAttribute="trailing" secondItem="sQY-9J-e83" secondAttribute="trailing" id="RJN-lB-aoP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dbi-1L-Tmq" secondAttribute="trailing" constant="8" id="Ytm-cg-flT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YYa-e4-Ku6" secondAttribute="bottom" constant="8" id="gWF-NH-r6k"/>
+                            <constraint firstItem="dbi-1L-Tmq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xM3-nh-hpA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraBtn" destination="dbi-1L-Tmq" id="0xs-4g-fo4"/>
+                        <outlet property="previewView" destination="sQY-9J-e83" id="AaI-6i-jNY"/>
+                        <outlet property="recordBtn" destination="YYa-e4-Ku6" id="S2S-Rh-Nf7"/>
+                        <segue destination="Knz-4e-4I1" kind="presentation" identifier="LoginVC" id="TLL-bF-D9t"/>
+                        <segue destination="YTu-fJ-Q0X" kind="show" identifier="UsersVC" id="4Pe-VI-Kkj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="0gG-fL-afi">
+            <objects>
+                <viewController id="Knz-4e-4I1" customClass="LoginVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTd-FV-Nod"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yoj-N8-7wd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pyC-gu-QC3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes" translatesAutoresizingMaskIntoConstraints="NO" id="Oor-ni-yoL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKl-sx-Yk0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.27450980392156865" green="0.59215686274509804" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ai-Jn-eAM">
+                                <rect key="frame" x="30" y="130" width="261.5" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-mountains-white" translatesAutoresizingMaskIntoConstraints="NO" id="iaX-kA-urL">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="aOu-6q-VlZ"/>
+                                            <constraint firstAttribute="width" constant="100" id="woY-Bq-XeZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-0Z-HSN">
+                                        <rect key="frame" x="100" y="0.0" width="161.5" height="64"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nrl-8n-NEb" customClass="RoundTextField" customModule="DevChat" customModuleProvider="target">
+                                <rect key="frame" x="28" y="249" width="265" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="54r-r2-sqc"/>
+                                    <constraint firstAttribute="height" constant="42" id="Qst-Ob-bB1"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.76078431372549016" green="0.95294117647058818" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-hZ-jBf" customClass="RoundTextField" customModule="DevChat" customModuleProvider="target">
+                                <rect key="frame" x="27" y="311" width="265" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="bOF-QR-Lhp"/>
+                                    <constraint firstAttribute="height" constant="42" id="rjI-B7-Yfq"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.76078431369999999" green="0.95294117649999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-T8-8hT" customClass="RoundButton" customModule="DevChat" customModuleProvider="target">
+                                <rect key="frame" x="27" y="373" width="265" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="QQD-Ic-grb"/>
+                                    <constraint firstAttribute="height" constant="42" id="sbn-zt-9Xe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Login In">
+                                    <color key="titleColor" red="0.27450980390000002" green="0.59215686270000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="Knz-4e-4I1" eventType="touchUpInside" id="rvV-RT-aNc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8XF-hZ-jBf" firstAttribute="centerX" secondItem="pyC-gu-QC3" secondAttribute="centerX" id="2Lv-Zb-RJm"/>
+                            <constraint firstItem="yKl-sx-Yk0" firstAttribute="leading" secondItem="pyC-gu-QC3" secondAttribute="leading" id="BKY-IC-oOi"/>
+                            <constraint firstItem="8XF-hZ-jBf" firstAttribute="top" secondItem="Nrl-8n-NEb" secondAttribute="bottom" constant="20" id="Hfm-fs-F7t"/>
+                            <constraint firstItem="yKl-sx-Yk0" firstAttribute="top" secondItem="pyC-gu-QC3" secondAttribute="top" id="KJu-tH-6Ti"/>
+                            <constraint firstItem="7Ai-Jn-eAM" firstAttribute="top" secondItem="GTd-FV-Nod" secondAttribute="bottom" constant="110" id="KS2-Ix-EcO"/>
+                            <constraint firstItem="Yoj-N8-7wd" firstAttribute="top" secondItem="Oor-ni-yoL" secondAttribute="bottom" id="MBn-n6-WJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="Oor-ni-yoL" secondAttribute="trailing" id="McH-u8-mMe"/>
+                            <constraint firstItem="Yoj-N8-7wd" firstAttribute="top" secondItem="yKl-sx-Yk0" secondAttribute="bottom" id="RzN-T2-QTd"/>
+                            <constraint firstItem="Oor-ni-yoL" firstAttribute="top" secondItem="pyC-gu-QC3" secondAttribute="top" id="TOH-Ku-WaO"/>
+                            <constraint firstItem="Nrl-8n-NEb" firstAttribute="centerX" secondItem="pyC-gu-QC3" secondAttribute="centerX" id="YTE-cF-dhd"/>
+                            <constraint firstItem="7Ai-Jn-eAM" firstAttribute="centerX" secondItem="pyC-gu-QC3" secondAttribute="centerX" id="bAM-MR-4zi"/>
+                            <constraint firstItem="Oor-ni-yoL" firstAttribute="leading" secondItem="pyC-gu-QC3" secondAttribute="leading" id="bmY-Ev-vWz"/>
+                            <constraint firstAttribute="trailing" secondItem="yKl-sx-Yk0" secondAttribute="trailing" id="skt-pX-JfI"/>
+                            <constraint firstItem="bPr-T8-8hT" firstAttribute="top" secondItem="8XF-hZ-jBf" secondAttribute="bottom" constant="20" id="sxc-vg-o09"/>
+                            <constraint firstItem="Nrl-8n-NEb" firstAttribute="top" secondItem="7Ai-Jn-eAM" secondAttribute="bottom" constant="55" id="ue1-oK-v3f"/>
+                            <constraint firstItem="bPr-T8-8hT" firstAttribute="centerX" secondItem="pyC-gu-QC3" secondAttribute="centerX" id="v0F-fm-lVw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="Nrl-8n-NEb" id="CB9-AR-HIL"/>
+                        <outlet property="passwordField" destination="8XF-hZ-jBf" id="5Lz-hk-jrm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ice-mz-tsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="37"/>
+        </scene>
+        <!--UsersVC-->
+        <scene sceneID="a7T-cb-TJf">
+            <objects>
+                <viewController id="YTu-fJ-Q0X" customClass="UsersVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tVr-ai-322"/>
+                        <viewControllerLayoutGuide type="bottom" id="2jh-fk-VGq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="07z-4f-oav">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="12s-dB-adt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="AoK-Wk-jzw"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.27450980390000002" green="0.59215686270000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bai-x3-ZHC">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="iyJ-yQ-jtM" customClass="UserCell" customModule="DevChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyJ-yQ-jtM" id="eb7-24-JLA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="james23kickdawg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k9-CD-gVy">
+                                                    <rect key="frame" x="20" y="6" width="230" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="58J-NC-amW"/>
+                                                        <constraint firstAttribute="width" constant="230" id="RJO-d8-ZH2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3k9-CD-gVy" firstAttribute="centerY" secondItem="eb7-24-JLA" secondAttribute="centerY" id="c4h-ad-1Qb"/>
+                                                <constraint firstItem="3k9-CD-gVy" firstAttribute="leading" secondItem="eb7-24-JLA" secondAttribute="leading" constant="20" id="fM3-NJ-hKf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstNameLbl" destination="3k9-CD-gVy" id="iMT-1F-5LW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eby-pn-RFk">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Send a Pull Request" id="2Ka-a1-jye">
+                                        <barButtonItem key="rightBarButtonItem" image="send_snap" id="b11-ip-Sxu">
+                                            <connections>
+                                                <action selector="sendPRBtnPressed:" destination="YTu-fJ-Q0X" id="dKq-x4-jfi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eby-pn-RFk" firstAttribute="leading" secondItem="07z-4f-oav" secondAttribute="leading" id="0cr-sV-7b9"/>
+                            <constraint firstItem="eby-pn-RFk" firstAttribute="top" secondItem="07z-4f-oav" secondAttribute="top" constant="20" id="2fE-MX-5Hi"/>
+                            <constraint firstAttribute="trailing" secondItem="eby-pn-RFk" secondAttribute="trailing" id="48k-z3-4OD"/>
+                            <constraint firstItem="12s-dB-adt" firstAttribute="top" secondItem="eby-pn-RFk" secondAttribute="bottom" id="65w-qQ-5AN"/>
+                            <constraint firstItem="12s-dB-adt" firstAttribute="leading" secondItem="07z-4f-oav" secondAttribute="leading" id="Klu-wC-FMz"/>
+                            <constraint firstAttribute="trailing" secondItem="bai-x3-ZHC" secondAttribute="trailing" id="ejw-wh-s3o"/>
+                            <constraint firstItem="bai-x3-ZHC" firstAttribute="top" secondItem="12s-dB-adt" secondAttribute="bottom" id="gGd-5o-E5c"/>
+                            <constraint firstItem="bai-x3-ZHC" firstAttribute="leading" secondItem="07z-4f-oav" secondAttribute="leading" id="hfX-XU-n7t"/>
+                            <constraint firstAttribute="trailing" secondItem="12s-dB-adt" secondAttribute="trailing" id="iIh-Q9-Xt1"/>
+                            <constraint firstItem="2jh-fk-VGq" firstAttribute="top" secondItem="bai-x3-ZHC" secondAttribute="bottom" id="sY8-c2-Fws"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bai-x3-ZHC" id="AgA-JZ-j8T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PPt-ZZ-Ex1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.875" y="-683.45070422535207"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="createsnap_btn" width="30" height="30"/>
+        <image name="devslopes" width="1080" height="1349"/>
+        <image name="devslopes-mountains-white" width="451" height="335"/>
+        <image name="send_snap" width="24" height="23"/>
+    </resources>
+</document>
