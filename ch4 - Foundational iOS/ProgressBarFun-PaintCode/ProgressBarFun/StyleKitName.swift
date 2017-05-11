@@ -16,19 +16,23 @@ public class StyleKitName : NSObject {
 
     //// Drawing Methods
 
-    public class func drawProgressBar(#frame: CGRect, progress: CGFloat) {
+    public class func drawProgressBar(frame: CGRect, progress: CGFloat) {
         //// Color Declarations
         let color = UIColor(red: 0.847, green: 0.278, blue: 0.118, alpha: 1.000)
 
         //// Progress Border Drawing
-        let progressBorderPath = UIBezierPath(roundedRect: CGRectMake(frame.minX + 1, frame.minY + 1, 298, 14), cornerRadius: 7)
-        color.setStroke()
+//        let progressBorderPath = UIBezierPath(roundedRect: CGRectMake(frame.minX + 1, frame.minY + 1, 298, 14), cornerRadius: 7)
+        let progressBorderPath = UIBezierPath(roundedRect: CGRect(x: frame.minX + 1, y: frame.minY + 1, width: 298, height: 14), cornerRadius: 7)
+        
+        //        color.setStroke()
         progressBorderPath.lineWidth = 1
         progressBorderPath.stroke()
 
 
         //// Progress Active Drawing
-        let progressActivePath = UIBezierPath(roundedRect: CGRectMake(1, 1, (progress + 98), 14), cornerRadius: 7)
+//        let progressActivePath = UIBezierPath(roundedRect: CGRectMake(1, 1, (progress + 98), 14), cornerRadius: 7)
+        let progressActivePath = UIBezierPath(roundedRect: CGRect(x: 1, y: 1, width: (progress + 98), height: 14), cornerRadius: 7)
+        
         color.setFill()
         progressActivePath.fill()
     }
